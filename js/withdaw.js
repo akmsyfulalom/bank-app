@@ -26,19 +26,25 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const previosWithdawTotalString = withdawTotalElement.innerText;
     const previosWithdawTotal = parseFloat(previosWithdawTotalString);
     console.log(previosWithdawTotal)
-    // step 4
-    const currentWithdawTotal = previosWithdawTotal + newWithdawAmount;
-    withdawTotalElement.innerText = currentWithdawTotal;
+
+
+
+    // step 7 clear foeld 
+    withdawField.value = '';
 
     // step 5 
     const balanceTotalElement = document.getElementById('balance-total');
     const previousBalanceTotalString = balanceTotalElement.innerText;
     const previousBalanceTotal = parseFloat(previousBalanceTotalString);
-
+    if (newWithdawAmount > previousBalanceTotal) {
+        alert('তোমার বাপ এর ব্যাংকে  তো টাকা নাই তুমি আগে এখানে টাকা রাখো তারপর তুমি এত টাকা তুলো')
+        return;
+    }
+    // step 4
+    const currentWithdawTotal = previosWithdawTotal + newWithdawAmount;
+    withdawTotalElement.innerText = currentWithdawTotal;
     //  steo 6
     const newBalanceTotal = previousBalanceTotal - newWithdawAmount;
     balanceTotalElement.innerText = newBalanceTotal;
 
-    // step 7 clear foeld 
-    withdawField.value = '';
 })

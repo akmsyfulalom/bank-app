@@ -21,7 +21,7 @@ document.getElementById('btn-submit').addEventListener('click', function () {
     }
 
     else {
-        alert('type your password')
+        alert('Enter the correct email and password')
     }
 
 })
